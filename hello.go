@@ -37,6 +37,15 @@ func setAudio(client *goobs.Client, src string, slider *widget.Slider) {
 	}
 }
 
+func getSceneList(client *goobs.Client) []string {
+	scenes, _ := client.Scenes.GetSceneList()
+	var ar []string
+	for sc := range scenes.Scenes {
+		ar = append(ar, string(scenes.Scenes[sc].Name))
+	}
+	return ar
+}
+
 func main() {
 
 	client, err := goobs.New(
@@ -79,6 +88,19 @@ func main() {
 
 	a := app.New()
 	w := a.NewWindow("Hello World")
+	//Get array of scenes for dropDownlist
+	ar := getSceneList(client)
+	t := widget.NewSelect(
+		ar,
+		func(s string) {
+			fmt.Printf("Selected: %s\n", s)
+		})
+
+	t.OnChanged = func(s string) {
+		//Should work, but doesnt... Trying to update the scene list with refresh
+		ar = getSceneList(client)
+		t.Refresh()
+	}
 	w.SetContent(mute)
 	w.Show()
 	src := widget.NewEntry()
@@ -108,6 +130,11 @@ func main() {
 			src,
 			widget.NewButton("Save", func() {
 				setAudio(client, src.Text, slider)
+			}),
+			t,
+			widget.NewButton("UpdateList", func() {
+				ar = getSceneList(client)
+				t.Refresh()
 			}),
 		),
 	)
