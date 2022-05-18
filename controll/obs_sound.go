@@ -1,4 +1,4 @@
-package Obs_sound
+package controll
 
 import (
 	"fyne.io/fyne/v2/widget"
