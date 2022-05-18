@@ -1,4 +1,4 @@
-module github.com/Scootzh/ObsTestingWithGoobsAndFyne/Obs_sound"
+module github.com/Scootzh/ObsTestingWithGoobsAndFyne/Obs_controll
 
 go 1.18
 
