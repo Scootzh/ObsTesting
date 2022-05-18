@@ -1,11 +1,10 @@
-module github.com/Scootzh/ObsTestingWithGoobsAndFyne
+module github.com/Scootzh/ObsTesting/main
 
 go 1.18
 
 require fyne.io/fyne/v2 v2.1.4
 
 require (
-	github.com/Scootzh/ObsTestingWithGoobsAndFyne/controll v1.0.0 //indirect
 	github.com/gorilla/websocket v1.4.2 // indirect
 	github.com/nu7hatch/gouuid v0.0.0-20131221200532-179d4d0c4d8d // indirect
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
