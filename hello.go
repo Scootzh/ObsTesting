@@ -55,7 +55,7 @@ func main() {
 		goobs.WithLogger(&logger{}),                   // optional
 	)
 	if err != nil {
-		fmt.Printf("Could not connect to obs-webbsocket\n")
+		fmt.Printf("Could not connect DeejOBS to obs-webbsocket\n")
 		panic(err)
 	}
 	defer client.Disconnect()
