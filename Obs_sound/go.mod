@@ -1,4 +1,4 @@
-module example.com/Obs_sound
+module github.com/Scootzh/ObsTestingWithGoobsAndFyne/Obs_sound"
 
 go 1.18
 
