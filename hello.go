@@ -26,16 +26,6 @@ func updateTime(client *goobs.Client, mute *widget.Label) {
 	//	resp, _ := client.Sources.GetVolume(&sources.GetVolumeParams{Source: "Game"})
 
 }
-func setAudio(client *goobs.Client, src string, slider *widget.Slider) {
-	slider.OnChanged = func(f float64) {
-		if _, err := client.Sources.SetVolume(&sources.SetVolumeParams{
-			Source: src,
-			Volume: slider.Value,
-		}); err != nil {
-			panic(err)
-		}
-	}
-}
 
 func getSceneList(client *goobs.Client) []string {
 	scenes, _ := client.Scenes.GetSceneList()
