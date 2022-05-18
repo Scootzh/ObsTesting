@@ -128,7 +128,7 @@ func main() {
 			slider,
 			lab,
 			src,
-			widget.NewButton("Save", func() {
+			widget.NewButton("Saves", func() {
 				setAudio(client, src.Text, slider)
 			}),
 			t,
